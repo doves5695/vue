@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+        .content1 {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: deeppink;
+        }
+        .content2 {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+        }
+        .content3 {
+            display: block;
+            width: 50px;
+            height: 50px;
+            background-color:aqua;
+        }
+    </style>
+</head>
+<div id="demo1" :class="{box1:true}">
+    {{message1}}
+    <span :class="prop1"  @click="clickEvent1">
+        {{na1}}
+    </span>
+</div>
+<div id="demo2" :class="{box2:true}">
+    {{message2}}
+    <span :class="prop2"  @click="clickEvent2">
+        {{na2}}
+    </span>
+</div>
+<div id="demo3" :class="{box3:ifActive}">
+    {{message3}}
+    <span :class="prop3"  @click="clickEvent3">
+        {{na3}}
+    </span>
+</div>
+<body>
+    <script>
+        // let da = {
+        // }
+        var vm1 = new Vue({
+            el : '#demo1',
+            data : {
+                message1 : 'jingrui',
+                prop1 : 'content1',
+                na1 : '4',
+            },
+            methods : {
+                    clickEvent1 : function () {
+                        console.log(666);
+                    }
+                }
+        });
+        var vm2 = new Vue({
+            el : '#demo2',
+            data : {
+                message2 : 'ni',
+                prop2 : 'content2',
+                na2 : '5',
+            },
+            methods : {
+                clickEvent2 : function () {
+                    console.log(999);
+                }
+            }
+        });
+        var vm3 = new Vue({
+            el : '#demo3',
+            data : {
+                message3 : 'hao',
+                ifActive : true,
+                prop3 : 'content3',
+                na3 : '6',
+            },
+            methods : {
+                clickEvent3 : function () {
+                    console.log(111);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

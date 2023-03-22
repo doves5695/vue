@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            color: red;
+        }
+        #demo {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="demo" >
+        {{message}}
+        <span :class="prop" @click="clickEvent">{{message}}</span>
+        <!-- <input type="text" v-model="message">{{message}} -->
+        <!-- <span :class="{active:ifActive}">{{name}}</span> -->
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        let data = {
+            message : 'hello world',
+            prop : 11,
+            ifActive : true,
+            name : 'jingrui'
+        }
+        new Vue({
+            el : '#demo',
+            data: data,
+            methods : {
+                clickEvent : function () {
+                    console.log(666);
+                }
+            }
+        })
+        //虚拟dom源码
+        // function  velement(tagName,prop,children) {
+        //     if(!(this instanceof velement)) {
+        //         return new velement(tagName,prop,children);
+        //     }
+        //     if(Object.prototype.toString.call(prop) === '[object Array]') {
+        //         children = prop;
+        //         prop = {};
+        //     }
+        //     this.tagName = tagName;
+        //     this.prop = prop || {};
+        //     this.children = children || {};
+        //     var count;
+        //     this.children.forEach(function(child,index) {
+        //         if(child instanceof velement) {
+        //             count += child.count;
+        //         }
+        //         count ++;
+        //     })
+        // }
+        // velement.prototype.render = function () {
+        //     var el = document.createElement(this.tagName);
+        //     var children = this.children;
+        //     var prop = this.prop;
+        //     for(var item in prop) {
+        //         var propValue = prop[item];
+        //         el.setAttribute(item,propValue);
+        //     }
+        //     children.forEach(function (child,index) {
+        //         // if(child instanceof velement) {
+        //         //     var childEl = child.render();
+        //         // } else {
+        //         //     var childEl = document.createTextNode(child);
+        //         // }
+        //         var childEl = (child instanceof velement) ? child.render() : 
+        //         document.createTextNode(child);
+        //         el.appendChild(childEl);
+        //     })
+        //     return el;
+        // }
+        // var dom = velement('div',{class:'11'},['hello',velement('p',{class : '22'},['world'])]);
+        // console.log(dom.render());
+
+
+
+
+    </script>
+</body>
+</html>
