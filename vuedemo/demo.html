@@ -5,8 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../vuedemo/demo.css">
+    <script src="../vue.js"></script>
 </head>
 <body>
-    
+    <div class="page-top">
+        <div class="page-content">
+            <h2>任务计划列表</h2>
+        </div>
+        <div class="main">
+            <h3 class="big-title">添加任务:</h3>
+            <input type="text" class="task-input" @keyup.13="addTodo" v-model="todo">
+            <ul class="task-count">
+                <li class="task-add">{{getChecked}}个任务未完成</li>
+                <li class="action">
+                    <a href="">所有任务</a>
+                    <a href="">未完成的任务</a>
+                    <a href="">完成的任务</a>
+                </li>
+            </ul>
+            <h3 class="big-title">任务列表:</h3>
+            <div class="tasks">
+                    <span class="no-task-tip" v-show="!list.length">
+                        还没有添加任何任务
+                    </span>
+                    <ul class="todo-list">
+                        <li class="list" v-for="(item,index) in list" v-bind:class="{completed:item.checked,editing:item === editingTodo}">
+                            <div class="view">
+                                <input class="tooggle" type="checkbox" v-model="item.checked" />
+                                <label @dblclick="editTodo(item)">{{item.title}}</label>
+                                <button class="destroy" @click="deleteTodo(item)">X</button>
+                            </div>
+                            <input type="text" class="edit" v-model="item.title" v-focus="item === editTodo" @keyup.13="editedTodo" @blur="editedTodo" @keyup.esc="cancelTodo(item)">
+                        </li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../vuedemo/demo.js"></script>
 </body>
 </html>

@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+a {
+    color: #000;
+}
+body {
+    background-color: #ccc;
+}
+.page-content {
+    width: 100%;
+    height: 40px;
+    background-color: #CD5C5C;
+    border-bottom: 1px solid #DC143C;
+}
+.page-content h2 {
+    width: 800px;
+    margin: 0 auto;
+    line-height: 40px;
+}
+.main {
+    width: 800px;
+    margin: 0 auto;
+}
+.main h3 {
+    margin: 10px 0;
+}
+.main .task-input {
+    width: 800px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 24px;
+}
+.main ul {
+    height: 20px;
+    margin: 8px 0;
+}
+.main ul .task-add {
+    color: red;
+    float: left;
+}
+.main ul .action {
+    float: right;
+} 
+.main ul a {
+    margin: 0 15px;
+}
+.tasks span {
+    display: block;
+    width: 800px;
+    height: 40px;
+    line-height: 40px;
+    background-color: white;
+    text-indent: 2em;
+}
+.tasks .todo-list {
+    width: 800px;
+}
+.tasks .view {
+    display: block;
+    width : 800px;
+    height: 40px;
+    background-color: white;
+}
+.tasks .view input {
+    width : 20px;
+    height: 20px;
+    margin: 0 8px;
+}
+.tasks label {
+    /* display: block; */
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 0 8px;
+}
+.tasks .destroy {
+    float: right;
+    border-radius: 50%;
+    margin-right: 30px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    display: block;
+    line-height: 40px;
+}
+.tasks .destroy:hover {
+    color: deeppink;
+}
+.tasks .edit {
+    display: block;
+    width: 800px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+
+
+
