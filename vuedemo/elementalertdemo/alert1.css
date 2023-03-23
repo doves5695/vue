@@ -1,0 +1,88 @@
+[class*="icon-"],[class^=icon-] {
+    font-family: element-icons!important;
+    speak-as: none;
+    font-style: normal;
+    font-weight: 400px;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: baseline;
+    display: inline-block;
+    -webkit-font-smoothing : antialiased;
+    -moz-osx-font-smoothing : grayscale;
+}
+.alert {
+    width: 500px;
+    padding: 8px 16px;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+    color: #fff;
+    display: table;
+    transition: opacity .2s;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+}
+.content {
+    display: table-cell;
+    padding: 0 8px;
+}
+.message {
+    font-size: 13px;
+    line-height: 18px;
+}
+.alert-success {
+    background-color: #13ce66;
+}
+.alert-info {
+    background-color: #50bfff;
+}
+.alert-warning {
+    background-color: #f7ba2a;
+}
+.alert-error {
+    background-color: #ff4949;
+}
+.closebtn {
+    font-size: 12px;
+    color: #fff;
+    opacity: 1;
+    top: 12px;
+    right: 15px;
+    position: absolute;
+    cursor: pointer;
+}
+.icon-close::before {
+    content: "\E60c";
+}
+.icon {
+    font-size: 16px;
+    width: 16px;
+    display: table-cell;
+    color: #fff;
+    vertical-align: middle;
+}
+.icon-success:before {
+    content: '\E609';
+}
+.icon-warning:before {
+    content: '\E615';
+}
+.icon-info:before {
+    content: '\E615';
+}
+.icon-error:before {
+    content: '\E608';
+}
+.icon-message:before {
+    content: '\E618';
+}
+.icon-menu:before {
+    content: '\E617';
+}
+.icon-setting:before{
+    content: '\E61E';
+}

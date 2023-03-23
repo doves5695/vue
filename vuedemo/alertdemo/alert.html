@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../vue.js"></script>
+    <link rel="stylesheet" href="../alertdemo/alert.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 如果title不在props当中声明一下那么因为“透传 attribute”,这个title就变成了一个属性附着在了组件的div上 -->
+        <modal title="弹窗">
+            <template slot="content">
+                <p>1.</p>
+                <p>2.</p>
+                <p>3.</p>
+                <p>4.</p>
+            </template>
+            <template slot="footer">
+                <button>确定</button>
+                <button>取消</button>
+                <button>重置</button>
+            </template>
+        </modal>
+        <modal title="付款" @ok="parentOk" @cancle="parentCancle"></modal>
+    </div>
+    <script src="../alertdemo/alert.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../elementalertdemo/alert1.css">
+    <script src="../../vue.js"></script>
+</head>
+<body>
+   <div id="app">
+        <alert></alert>
+    </div>
+   <script>
+    Vue.component('alert',{
+        template:`
+        <div class="alert alert-info">
+            <i class="icon icon-info"></i>
+                <div class="content">
+                    <span class="message">这是信息</span>
+                </div>
+            <i class="closebtn icon-close"></i>
+        </div>`
+    })
+    var app = new Vue({
+        el : '#app'
+    })
+   </script>
+</body>
+</html>

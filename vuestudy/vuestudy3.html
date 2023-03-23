@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <!-- <div id="demo">
+        {{message}}
+        如果在table当中放一个div,div会跑到table标签上面
+        <table>
+            <div></div>
+            <tr is="my-component"></tr>
+        </table> 
+        <button @click="handleButton"></button>
+        <my-component name="0" v-show="ifShow"></my-component>
+        <my-component2></my-component2>
+    </div>
+    <div id="demo2">
+        <my-component name="0"></my-component>
+     </div> -->
+
+     <!-- --------------------------------------------------------------------------------------------------- -->
+
+     <!-- <div id="demo">
+        {{total}}
+        <my-component @increase="increasetotal"></my-component>
+        <my-component @increase="increasetotal"></my-component>
+     </div> -->
+
+     <!-- ======================================================================================================= -->
+
+     <div id="demo">
+        <my-component>
+            <div slot="one">我是第一个div</div>
+            <div slot="two">我是第二个div</div>
+            <div slot="three">我是第三个div</div>
+        </my-component>
+     </div>
+    <script>
+        // var count = {
+        //     count : 0
+        // }
+        // //全局的组件一定要写在vue的实例里面
+        // Vue.component('my-component',{
+        //     template : `<div><button @click='handleclick'>{{count}}</button>{{count}}</div>`,
+        //     data : function () {
+        //         return {
+        //             count : 0
+        //         };
+        //     },
+        //     props : {
+        //         'name' : {
+        //             type : String
+        //         }
+        //     },
+        //     methods : {
+        //         handleclick : function () {
+        //             this.count ++;
+        //         }
+        //     }
+        // });
+
+        
+        // new Vue ({
+        //     el : '#demo',
+        //     //这是一个局部组件,只有在被vue实例的里面才好使
+        //     components : {
+        //         "my-component2" : {
+        //             template : `<div>这是局部组件</div>`
+        //         }
+        //     },
+        //     // template : `<table><my-component></my-component></table>`,
+        //     data : {
+        //         message : 'hello',
+        //         ifShow : true,
+        //         default : 0,//默认值
+        //         required : true
+        //     },
+        //     methods : {
+        //         handleButton : function () {
+        //             if(this.ifShow) {
+        //                 this.ifShow = false;
+        //             } else {
+        //                 this.ifShow = true;
+        //             }
+        //         }
+        //     }
+        // })
+        // new Vue ({
+        //     el : '#demo2',
+        // })
+
+        // -------------------------------------------------------------------------------------------
+
+
+        // 讲的是父子组件互相如何传数据
+        // Vue.component('my-component',{
+        //     template:`<div>
+        //                 <button @click='handleclick'>{{count}}</button>
+        //              </div>`,
+        //     data() {
+        //         return {
+        //             count : 0
+        //         }
+        //     },
+        //     methods : {
+        //         handleclick () {
+        //             this.count++;
+        //             this.$emit('increase')
+        //         }
+        //     }
+        // })
+        // new Vue ({
+        //     el : '#demo',
+        //     data : {
+        //         total : 0
+        //     },
+        //     methods : {
+        //         increasetotal () {
+        //             this.total ++;
+        //         }
+        //     }
+        // })
+
+        // ============================================================================================================
+
+
+        Vue.component('my-component',{
+            template : `
+            <div>
+                <slot name='one'>
+                    <p>我是第一个</p>
+                </slot>
+                <slot name='two'>
+                    <p>我是第二个</p>
+                </slot>
+                <slot name='three'>
+                    <p>我是第三个</p>
+                </slot>
+            </div>`
+        })
+
+        new Vue ({
+            el : '#demo'
+        })
+    </script>
+</body>
+</html>
