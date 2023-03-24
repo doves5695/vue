@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+li {
+    float: left;
+    margin: 20px;
+}
+.active {
+    background-color: deeppink;
+    color: black;
+}
+.costumclass {
+    background-color: green
+}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center1 {
+    font-weight: bold;
+    font-size: 32px;
+    color: red;
+}

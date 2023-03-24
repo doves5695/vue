@@ -10,22 +10,18 @@
 </head>
 <body>
    <div id="app">
-        <alert></alert>
+        <alert title="标题" type="info" :closeable="true" :show-icon="false" @close="closebtn">
+            <template slot="contentSlot">
+                <p>1</p>
+                <p>2</p>
+                <p>3</p>
+                <p>4</p>
+            </template>
+            <template slot="iconSlot">
+                <i class="icon icon-menu" slot="iconSlot"></i>
+            </template>
+        </alert>
     </div>
-   <script>
-    Vue.component('alert',{
-        template:`
-        <div class="alert alert-info">
-            <i class="icon icon-info"></i>
-                <div class="content">
-                    <span class="message">这是信息</span>
-                </div>
-            <i class="closebtn icon-close"></i>
-        </div>`
-    })
-    var app = new Vue({
-        el : '#app'
-    })
-   </script>
+    <script src="./alert.js"></script>
 </body>
 </html>
